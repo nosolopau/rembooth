@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'foreman'
+
+gem 'omniauth-redbooth'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
