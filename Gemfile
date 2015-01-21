@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'foreman'
 
+gem 'devise'
 gem 'omniauth-redbooth'
 gem 'mongoid'
 gem 'bson_ext'
