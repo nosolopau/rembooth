@@ -193,6 +193,7 @@ DEPENDENCIES
   bson_ext
   byebug
   coffee-rails (~> 4.1.0)
+  dotenv
   foreman
   jbuilder (~> 2.0)
   jquery-rails
