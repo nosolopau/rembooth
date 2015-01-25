@@ -25,7 +25,10 @@ module Rembooth
     # config.time_zone = 'Central Time (US & Canada)'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-    # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+    # config.i18n.load_path += Dir[Rails.root.join('lib', 'locales', '*.{rb,yml}').to_s]
+
+    config.autoload_paths += Dir["#{config.root}/lib/**/"]
+
     # config.i18n.default_locale = :de
   end
 end
