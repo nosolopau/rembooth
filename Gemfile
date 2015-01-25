@@ -8,6 +8,9 @@ gem 'mongoid'
 gem 'bson_ext'
 gem 'dotenv'
 
+gem 'bootstrap-sass', '~> 3.3.1'
+gem 'autoprefixer-rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use SCSS for stylesheets
