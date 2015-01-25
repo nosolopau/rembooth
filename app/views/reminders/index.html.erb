@@ -1,4 +1,23 @@
 <h1>Reminders</h1>
+<table>
+  <thead>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @tasks.each do |task| %>
+    <tr>
+      <td><%= task.id %></td>
+      <td><%= task.due_on %></td>
+      <td><%= task.name %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
 
 <table>
   <thead>
