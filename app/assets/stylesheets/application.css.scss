@@ -1,2 +1,19 @@
+@import "variables";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+  padding-top: 70px;
+}
+
+.red-logo {
+  color: #c00;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #fff;
+}
+
+.btn-login {
+  @include button-variant(#fff , $brand-primary, $brand-primary)
+}

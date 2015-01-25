@@ -1,6 +1,5 @@
-<h1>Hi!</h1>
 <% if user_signed_in? %>
-
+  <%= render 'dashboard' %>
 <% else %>
-  <%= link_to 'Sign in with Redbooth', user_omniauth_authorize_path(:redbooth), class: 'btn btn-default' %>
+  <%= render 'anonymous' %>
 <% end %>

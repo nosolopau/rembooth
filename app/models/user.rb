@@ -29,17 +29,26 @@ class User
   field :credentials, type: Hash
   field :extra, type: Hash
 
-  def self.from_redbooth(auth)
+  def self.find_or_create_from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.email = auth.info.email
-      user.name = auth.info.name
-      user.password = Devise.friendly_token[0,20]
-      user.extra = auth.extra
-      user.credentials = auth.credentials
+      user.from_redbooth(auth)
+      user.create_password
     end
   end
 
   def update_from_omniauth(auth)
-    update_attributes(email: auth.info.email, credentials: auth.credentials, extra: auth.extra)
+    from_redbooth(auth)
+    save!
+  end
+
+  def from_redbooth(auth)
+    self.email = auth.info.email
+    self.name = auth.info.name
+    self.extra = auth.extra
+    self.credentials = auth.credentials
+  end
+
+  def create_password
+    self.password = Devise.friendly_token[0,20]
   end
 end
