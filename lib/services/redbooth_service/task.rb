@@ -1,14 +1,14 @@
 module RedboothService
   class Task < RedboothService::Base
     def all
-      get_collection()
+      get_collection
     end
 
     def open
       get_collection(status: 'open')
     end
 
-    def get_collection(options)
+    def get_collection(options = {})
       tasks_collection = client.task(:index, options)
       tasks = tasks_collection.all
 
