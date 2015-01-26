@@ -12,7 +12,7 @@ module RedboothService
       refresh_access_token_obj = OAuth2::AccessToken.new(@oauth2_client, @access_token.token, {'refresh_token' => credentials[:refresh_token]})
       @access_token = refresh_access_token_obj.refresh!
 
-      {token: @access_token.token, refresh_token: @access_token.refresh_token, expires_at: @access_token.expires_at}
+      { token: @access_token.token, refresh_token: @access_token.refresh_token, expires_at: @access_token.expires_at }
     end
   end
 end

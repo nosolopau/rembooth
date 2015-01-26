@@ -57,12 +57,12 @@ class User
     refresh_token! if token_expired?
   end
 
-  def token_expired?
-    Time.now > Time.strptime(credentials[:expires_at].to_s, '%s')
-  end
-
   def refresh_token!
     self.credentials = RedboothService::Auth.refresh_token(credentials)
     save!
+  end
+
+  def token_expired?
+    Time.now > Time.strptime(credentials[:expires_at].to_s, '%s')
   end
 end
