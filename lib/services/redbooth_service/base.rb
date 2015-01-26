@@ -9,13 +9,13 @@ module RedboothService
     end
 
     def client
-      @client ||= ::RedboothRuby::Client.new(session)
+      @client ||= RedboothRuby::Client.new(session)
     end
 
     protected
 
     def session
-      @session ||= ::RedboothRuby::Session.new(token: user.credentials[:token])
+      @session ||= RedboothRuby::Session.new(token: user.credentials[:token])
     end
 
 

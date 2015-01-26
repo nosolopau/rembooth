@@ -52,4 +52,17 @@ class User
   def create_password
     self.password = Devise.friendly_token[0,20]
   end
+
+  def refresh_token_if_expired!
+    refresh_token! if token_expired?
+  end
+
+  def token_expired?
+    Time.now > Time.strptime(credentials[:expires_at].to_s, '%s')
+  end
+
+  def refresh_token!
+    self.credentials = RedboothService::Auth.refresh_token(credentials)
+    save!
+  end
 end
