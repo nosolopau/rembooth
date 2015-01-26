@@ -1,22 +1,11 @@
 module RedboothService
   class Task < RedboothService::Base
-    def all
-      get_collection
-    end
-
     def open
-      get_collection(status: 'open')
+      fetch_resources(status: 'open')
     end
 
-    def get_collection(options = {})
-      tasks_collection = client.task(:index, options)
-      tasks = tasks_collection.all
-
-      while tasks_collection = tasks_collection.next_page do
-        tasks << tasks_collection.all
-      end
-
-      tasks
+    def fetch(options = {})
+      client.task(:index, options)
     end
   end
 end

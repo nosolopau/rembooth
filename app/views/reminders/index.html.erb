@@ -1,23 +1,23 @@
 <h1>Reminders</h1>
-<table>
+<p>Mark a task list to get notifications:</p>
+<table class="table">
   <thead>
   <tr>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th class="col-sm-1">Reminder</th>
+    <th class="col-sm-10">Task list</th>
+    <th class="col-sm-1">Tasks</th>
   </tr>
   </thead>
   <tbody>
-  <% @tasks.each do |task| %>
+  <% @task_lists.each do |task_lists| %>
     <tr>
-      <td><%= task.id %></td>
-      <td><%= task.due_on %></td>
-      <td><%= task.name %></td>
+      <td><input type="checkbox"></td>
+      <td><%= task_lists.name %></td>
+      <td><%= task_lists.tasks_count %></td>
     </tr>
   <% end %>
   </tbody>
 </table>
-
 
 <table>
   <thead>

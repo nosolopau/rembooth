@@ -7,7 +7,7 @@ gem 'omniauth-redbooth'
 gem 'mongoid'
 gem 'bson_ext'
 gem 'dotenv'
-gem 'redbooth-ruby'
+gem 'redbooth-ruby', github: 'teambox/redbooth-ruby', branch: 'master'
 
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'

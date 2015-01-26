@@ -53,7 +53,7 @@ class User
     self.password = Devise.friendly_token[0,20]
   end
 
-  def refresh_token_if_expired!
+  def refresh_token_if_expired
     refresh_token! if token_expired?
   end
 
