@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'foreman'
+gem 'whenever', require: false
 
 gem 'devise'
 gem 'omniauth-redbooth'
