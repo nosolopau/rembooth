@@ -5,7 +5,6 @@ class RemindersController < ApplicationController
 
   def index
     @reminders = Reminder.all
-
     @task_lists = RedboothService::TaskList.new(current_user).all
 
     respond_with(@reminders)
@@ -23,9 +22,23 @@ class RemindersController < ApplicationController
   def edit
   end
 
+  def toggle
+    @reminder = current_user.reminders.where(reminder_params).first
+
+    if @reminder
+      @reminder.destroy
+    else
+      @reminder = current_user.reminders.new(reminder_params)
+      @reminder.save
+    end
+
+    respond_with(@reminder)
+  end
+
   def create
-    @reminder = Reminder.new(reminder_params)
+    @reminder = current_user.reminders.new(reminder_params)
     @reminder.save
+
     respond_with(@reminder)
   end
 
@@ -45,6 +58,6 @@ class RemindersController < ApplicationController
     end
 
     def reminder_params
-      params[:reminder]
+      params.require(:reminder).permit(:task_list_id)
     end
 end

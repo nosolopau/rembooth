@@ -4,7 +4,7 @@ module RedboothService
       fetch_resources(status: 'open')
     end
 
-    def fetch(options = {})
+    def find_by(options = {})
       client.task(:index, options)
     end
   end

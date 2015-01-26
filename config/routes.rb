@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :reminders
+  resources :reminders do
+    collection do
+      post :toggle
+    end
+  end
 
   get 'home/index'
 

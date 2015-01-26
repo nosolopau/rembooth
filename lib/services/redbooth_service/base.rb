@@ -18,7 +18,7 @@ module RedboothService
     end
 
     def fetch_resources(options = {})
-      collection = fetch(options)
+      collection = find_by(options)
       items = collection.all
 
       while collection = collection.next_page do

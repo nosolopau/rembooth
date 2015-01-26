@@ -1,6 +1,6 @@
 module RedboothService
   class TaskList < RedboothService::Base
-    def fetch(options = {})
+    def find_by(options = {})
       client.task_list(:index, options)
     end
   end

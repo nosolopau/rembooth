@@ -9,29 +9,23 @@
   </tr>
   </thead>
   <tbody>
-  <% @task_lists.each do |task_lists| %>
+  <% @task_lists.each do |task_list| %>
     <tr>
-      <td><input type="checkbox"/></td>
-      <td><%= task_lists.name %></td>
-      <td><%= task_lists.tasks_count %></td>
+      <td><%= check_box_tag "task_list_#{task_list.id}", task_list.id, current_user.reminders.where(task_list_id: task_list.id).any? %></td>
+      <td><%= task_list.name %></td>
+      <td><%= task_list.tasks_count %></td>
     </tr>
   <% end %>
   </tbody>
 </table>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @reminders.each do |reminder| %>
-      <tr>
-        <td><%= link_to 'Show', reminder %></td>
-        <td><%= link_to 'Edit', edit_reminder_path(reminder) %></td>
-        <td><%= link_to 'Destroy', reminder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<script type="text/javascript">
+  $(function(){
+    $(':checkbox').on('change',function(){
+      var task_list_id = $(this).val();
+      $.post("<%= toggle_reminders_path %>", {reminder: {task_list_id: task_list_id}}, function(){
+          console.log("OK " + task_list_id);
+      });
+    });
+  });
+</script>
