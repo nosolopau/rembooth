@@ -5,6 +5,7 @@ gem 'whenever', require: false
 
 gem 'devise'
 gem 'omniauth-redbooth'
+gem 'omniauth-twitter'
 gem 'mongoid'
 gem 'bson_ext'
 gem 'dotenv'

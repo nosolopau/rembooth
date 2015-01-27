@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
+  get '/users/auth/twitter/callback', to: 'users/identities#twitter'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   root to: 'home#index'

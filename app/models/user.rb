@@ -31,13 +31,22 @@ class User
   field :name, type: String
   field :credentials, type: Hash
   field :extra, type: Hash
-  field :twitter_user, type: String
+  field :twitter_nickname, type: String
+  field :twitter_info, type: Hash
+  field :twitter_credentials, type: Hash
 
   def self.find_or_create_from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.from_redbooth(auth)
       user.create_password
     end
+  end
+
+  def add_twitter_account(auth)
+    self.twitter_nickname = auth['info']['nickname']
+    self.twitter_credentials = auth['credentials']
+    self.twitter_info = auth['info']
+    save!
   end
 
   def update_from_omniauth(auth)
