@@ -9,6 +9,7 @@ gem 'mongoid'
 gem 'bson_ext'
 gem 'dotenv'
 gem 'redbooth-ruby', github: 'teambox/redbooth-ruby', branch: 'master'
+gem 'twitter', '~> 5.13.0'
 
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
