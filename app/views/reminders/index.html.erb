@@ -21,7 +21,7 @@
 
 <script type="text/javascript">
   $(function(){
-    $(':checkbox').on('change',function(){
+    $(':checkbox').on('change', function(){
       var task_list_id = $(this).val();
       $.post("<%= toggle_reminders_path %>", {reminder: {task_list_id: task_list_id}}, function(){
           console.log("OK " + task_list_id);
