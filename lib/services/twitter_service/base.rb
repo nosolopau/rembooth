@@ -17,7 +17,13 @@ module TwitterService
       @client.update(status)
     end
 
+    def self.mention(user, status = '')
+      tweet("@#{user} #{status}")
+    end
+
     def self.tweet(status = '')
+      Rails.logger.info "Sending update to Twitter (#{status})"
+
       new.update(status)
     end
   end

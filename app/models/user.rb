@@ -31,6 +31,7 @@ class User
   field :name, type: String
   field :credentials, type: Hash
   field :extra, type: Hash
+  field :twitter_screen_name, type: String
 
   def self.find_or_create_from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
