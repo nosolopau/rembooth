@@ -29,6 +29,6 @@ class TwitterNotification < Notification
   end
 
   def compose_status
-    self.status = "@#{user_twitter_nickname} #{redbooth_task_name} - #{redbooth_task_description}".truncate(140)
+    self.status = "@#{user_twitter_nickname} #{redbooth_task_name} #{"- #{redbooth_task_description}" if redbooth_task_description}".truncate(140)
   end
 end

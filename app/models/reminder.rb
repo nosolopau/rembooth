@@ -10,13 +10,17 @@ class Reminder
   validates :task_list_id, uniqueness: true
 
   def redbooth_tasks
-    RedboothService::Task.new(user).find_by(task_list_id: task_list_id)
+    RedboothService::Task.new(user).find_by(task_list_id: task_list_id).all
   end
 
   def send_notifications
-    redbooth_tasks.all.each do |redbooth_task|
-      notify(redbooth_task)
+    redbooth_tasks.each do |redbooth_task|
+      notify(redbooth_task) if due?(redbooth_task)
     end
+  end
+
+  def due?(redbooth_task)
+    redbooth_task.due_on && Date.parse(redbooth_task.due_on).today?
   end
 
   def notify(redbooth_task)
