@@ -1,1 +1,7 @@
 <h1>Hi, <%= current_user.name %>!</h1>
+<h2>Reminders</h2>
+<% if current_user.reminders.any? %>
+  <p>You have <strong><%= current_user.reminders.count %> reminders</strong> configured :)</p>
+<% else %>
+  <p>You don't have any reminders configured! Go to <%= link_to 'reminders', reminders_path %> and start playing!</p>
+<% end %>

@@ -31,6 +31,7 @@ class User
   field :name, type: String
   field :credentials, type: Hash
   field :extra, type: Hash
+
   field :twitter_nickname, type: String
   field :twitter_info, type: Hash
   field :twitter_credentials, type: Hash
@@ -76,5 +77,9 @@ class User
 
   def token_expired?
     Time.now > Time.strptime(credentials[:expires_at].to_s, '%s')
+  end
+
+  def linked_twitter_account?
+    twitter_nickname.present?
   end
 end

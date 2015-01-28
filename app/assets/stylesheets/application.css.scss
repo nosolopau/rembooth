@@ -17,3 +17,7 @@ body {
 .btn-login {
   @include button-variant(#fff , $brand-primary, $brand-primary)
 }
+
+.well h2{
+  margin-top: 0;
+}
