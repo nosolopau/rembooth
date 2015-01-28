@@ -8,6 +8,10 @@ class Notification
   field :redbooth_task_name, type: String
   field :redbooth_task_description, type: String
 
+  validates :redbooth_task_id, uniqueness: true
+  validates :redbooth_task_name, uniqueness: true
+  validates :redbooth_task_description, uniqueness: true
+
   def self.deliver_for(reminder, redbooth_task)
     # Raise!
   end

@@ -1,6 +1,9 @@
 class TwitterNotification < Notification
-  field :status_id, type: String
   field :status, type: String
+  field :status_id, type: String
+
+  validates :status, uniqueness: true
+  validates :status_id, uniqueness: true
 
   def self.deliver_for(reminder, redbooth_task)
     twitter_notification = new(
