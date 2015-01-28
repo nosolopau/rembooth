@@ -28,6 +28,7 @@ module Rembooth
     # config.i18n.load_path += Dir[Rails.root.join('lib', 'locales', '*.{rb,yml}').to_s]
 
     config.autoload_paths += Dir["#{config.root}/lib/**/"]
+    config.active_job.queue_adapter = :delayed_job
 
     # config.i18n.default_locale = :de
   end

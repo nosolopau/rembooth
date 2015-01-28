@@ -11,4 +11,8 @@ class Reminder
   def redbooth_tasks
     RedboothService::Task.new(user).find_by(task_list_id: task_list_id)
   end
+
+  def text_for(task)
+    "@#{user.twitter_nickname} #{task.name} - #{task.description}".truncate(140)
+  end
 end

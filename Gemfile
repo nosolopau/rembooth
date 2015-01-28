@@ -11,6 +11,7 @@ gem 'bson_ext'
 gem 'dotenv'
 gem 'redbooth-ruby', github: 'teambox/redbooth-ruby', branch: 'master'
 gem 'twitter', '~> 5.13.0'
+gem 'delayed_job_mongoid'
 
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
@@ -53,5 +54,6 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'delayed_job-rails_reloader', github: 'nosolopau/delayed_job-rails_reloader'
 end
 

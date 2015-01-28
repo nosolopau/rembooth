@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/nosolopau/delayed_job-rails_reloader.git
+  revision: ff2f9d64d1316f35b2c03071b9b149f8d28cdd8c
+  specs:
+    delayed_job-rails_reloader (0.1.0)
+      delayed_job (~> 4.0.0)
+      rails (~> 4.0)
+
+GIT
   remote: git://github.com/teambox/redbooth-ruby.git
   revision: 577a4b50794cd48953995e3c7df139dce07c6575
   branch: master
@@ -77,6 +85,11 @@ GEM
     connection_pool (2.1.0)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
+    delayed_job (4.0.6)
+      activesupport (>= 3.0, < 5.0)
+    delayed_job_mongoid (2.1.0)
+      delayed_job (>= 3.0, < 5)
+      mongoid (>= 3.0, < 5)
     devise (3.4.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -255,6 +268,8 @@ DEPENDENCIES
   bson_ext
   byebug
   coffee-rails (~> 4.1.0)
+  delayed_job-rails_reloader!
+  delayed_job_mongoid
   devise
   dotenv
   foreman
