@@ -8,6 +8,6 @@ module ApplicationHelper
   end
 
   def linked_twitter_account?
-    current_user.linked_twitter_account?
+    user_signed_in? && current_user.linked_twitter_account?
   end
 end

@@ -10,14 +10,13 @@
       </button>
       <a class="navbar-brand" href="<%= root_path %>"><%= logo_with_text %></a>
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <% if user_signed_in? %>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><%= link_to 'Dashboard', root_path %></li>
         <li><%= link_to 'Reminders', reminders_path %></li>
       </ul>
-      <% if user_signed_in? %>
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -29,7 +28,7 @@
             </ul>
           </li>
         </ul>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </nav>

@@ -17,7 +17,7 @@
     <%= render 'layouts/messages' %>
   </div>
   <div class="container">
-    <% unless linked_twitter_account? %>
+    <% if user_signed_in? && !linked_twitter_account? %>
       <%= render 'shared/link_twitter_account' %>
     <% end %>
     <%= yield %>
