@@ -3,7 +3,42 @@
 @import "bootstrap";
 
 body {
-  padding-top: 70px;
+  padding-top: 50px;
+}
+
+.steps {
+  .step {
+    h2 {
+      margin-top: 0.1em;
+      font-size: 4em;
+    }
+
+    a {
+      color: $brand-primary;
+    }
+
+    span {
+      font-size: 1.3em;
+      color: $brand-primary;
+    }
+
+    padding: .3em 2em 1em 2em;
+    margin-top: 1em;
+    background-color: $gray-lighter;
+    height: 220px;
+  }
+}
+
+.alert {
+  margin-top: 1em;
+}
+.container .jumbotron{
+  padding: 3em 0 2em 0;
+}
+.header-fluid {
+  margin: 0;
+  padding: 0.5em 0 2em 0;
+  background-color: $gray-lighter;
 }
 
 .red-logo {
@@ -15,9 +50,10 @@ body {
 }
 
 .btn-login {
-  @include button-variant(#fff , $brand-primary, $brand-primary)
+  @include button-variant(#fff , $brand-primary, $brand-primary);
+
+  padding: 0.8em;
+  font-size: 1.4em;
 }
 
-.well h2{
-  margin-top: 0;
-}
+
