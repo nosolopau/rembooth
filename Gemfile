@@ -18,6 +18,7 @@ gem 'dotenv'
 gem 'redbooth-ruby', github: 'teambox/redbooth-ruby', branch: 'master'
 gem 'twitter', '~> 5.13.0'
 gem 'delayed_job_mongoid'
+gem 'daemons'
 
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'

@@ -101,6 +101,7 @@ GEM
     colorize (0.7.5)
     columnize (0.9.0)
     connection_pool (2.1.0)
+    daemons (1.1.9)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     delayed_job (4.0.6)
@@ -303,6 +304,7 @@ DEPENDENCIES
   capistrano-rbenv (~> 2.0)
   capistrano3-delayed-job (~> 1.0)
   coffee-rails (~> 4.1.0)
+  daemons
   delayed_job-rails_reloader!
   delayed_job_mongoid
   devise
