@@ -12,7 +12,7 @@
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server 'deploy@atlanta', user: 'deploy', roles: %w{web app db}, my_property: :my_value
+server 'atlanta', user: 'deploy', roles: %w{web app db}, my_property: :my_value
 
 
 # Custom SSH Options
