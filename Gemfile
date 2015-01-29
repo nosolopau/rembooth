@@ -8,6 +8,7 @@ gem 'capistrano-bundler', '~> 1.1.2'
 gem 'capistrano-rails', '~> 1.1'
 gem 'capistrano3-delayed-job', '~> 1.0'
 gem 'therubyracer'
+gem 'unicorn'
 
 gem 'devise'
 gem 'omniauth-redbooth'
