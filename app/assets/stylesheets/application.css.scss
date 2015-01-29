@@ -9,7 +9,8 @@ body {
 .steps {
   .step {
     h2 {
-      margin-top: 0.1em;
+      margin-top: 0.2em;
+      margin-bottom: 0.4em;
       font-size: 4em;
     }
 
@@ -18,7 +19,7 @@ body {
     }
 
     span {
-      font-size: 1.3em;
+      font-size: 1.2em;
       color: $brand-primary;
     }
 
