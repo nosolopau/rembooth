@@ -20,5 +20,5 @@
 # Learn more: http://github.com/javan/whenever
 
 every 15.minutes do
-
+  rake 'reminder_notifier:run'
 end
