@@ -19,6 +19,13 @@
 
 # Learn more: http://github.com/javan/whenever
 
+env :MAILTO, 'pau@nosolopau.com'
+env :PATH, ENV['PATH']
+
 every 15.minutes do
   rake 'reminder_notifier:run'
+end
+
+every :reboot do
+  unicorn_start 'application'
 end
