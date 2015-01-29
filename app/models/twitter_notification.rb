@@ -15,6 +15,8 @@ class TwitterNotification < Notification
 
     twitter_notification.compose_status
 
+    Rails.logger.info "Ready notification for #{redbooth_task.id} (#{already_notified?(redbooth_task)})"
+
     unless already_notified?(redbooth_task)
       twitter_notification.save if twitter_notification.deliver!
     end
@@ -23,6 +25,8 @@ class TwitterNotification < Notification
   def deliver!
     new_status = TwitterService::Base.tweet(status)
     self.status_id = new_status.id
+
+    Rails.logger.info "Delivered notification with status id #{new_status.id}!"
 
     new_status
   end

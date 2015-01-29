@@ -10,20 +10,24 @@ class Reminder
   validates :task_list_id, uniqueness: true
 
   def redbooth_tasks
-    RedboothService::Task.new(user).find_by(task_list_id: task_list_id).all
+    @redbooth_tasks ||= RedboothService::Task.new(user).find_by(task_list_id: task_list_id).all
   end
 
   def send_notifications
+    Rails.logger.info "Fetched #{redbooth_tasks.count} tasks from Redbooth. Processing..."
+
     redbooth_tasks.each do |redbooth_task|
-      notify(redbooth_task) if due?(redbooth_task)
+      notify(redbooth_task) if self.class.due?(redbooth_task)
     end
   end
 
-  def due?(redbooth_task)
-    redbooth_task.due_on && Date.parse(redbooth_task.due_on).today?
+  def notify(redbooth_task)
+    Rails.logger.info "Sending notification for Redbooth task #{redbooth_task.id}..."
+
+    TwitterNotification.deliver_for(self, redbooth_task)
   end
 
-  def notify(redbooth_task)
-    TwitterNotification.deliver_for(self, redbooth_task)
+  def self.due?(redbooth_task)
+    redbooth_task.due_on && Date.parse(redbooth_task.due_on).today?
   end
 end
