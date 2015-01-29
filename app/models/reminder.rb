@@ -24,6 +24,6 @@ class Reminder
   end
 
   def notify(redbooth_task)
-    TwitterNotification.delay.deliver_for(self, redbooth_task)
+    TwitterNotification.deliver_for(self, redbooth_task)
   end
 end
