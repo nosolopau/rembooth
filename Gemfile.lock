@@ -255,6 +255,10 @@ GEM
     ref (1.0.5)
     responders (2.0.2)
       railties (>= 4.2.0.alpha, < 5)
+    rspec-expectations (3.0.4)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.0.0)
+    rspec-support (3.0.4)
     sass (3.4.10)
     sass-rails (5.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -351,6 +355,7 @@ DEPENDENCIES
   omniauth-twitter
   rails (= 4.2.0)
   redbooth-ruby!
+  rspec-expectations
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring

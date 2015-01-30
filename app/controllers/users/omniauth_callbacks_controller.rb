@@ -1,4 +1,6 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  skip_before_filter :authenticate_user!
+  
   def redbooth
     @user = User.find_or_create_from_omniauth(request.env['omniauth.auth'])
 
