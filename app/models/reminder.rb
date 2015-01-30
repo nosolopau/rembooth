@@ -22,9 +22,7 @@ class Reminder
   end
 
   def notify(redbooth_task)
-    Rails.logger.info "Sending notification for Redbooth task #{redbooth_task.id}..."
-
-    TwitterNotification.deliver_for(self, redbooth_task)
+    Notifier.perform_later(self, redbooth_task)
   end
 
   def self.due?(redbooth_task)
