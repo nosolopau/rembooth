@@ -6,7 +6,7 @@
 
 .idea
 .capistrano
-
+coverage
 # Ignore bundler config.
 /.bundle
 
