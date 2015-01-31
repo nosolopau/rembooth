@@ -1,5 +1,5 @@
 When(/^I navigate to "([^"]*)"$/) do |section|
- visit section
+ visit "/#{section}"
 end
 
 Given(/^I am logged in$/) do

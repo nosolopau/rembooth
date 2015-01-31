@@ -4,3 +4,9 @@ Feature: Reminders
     Given I am logged in
     When I navigate to "reminders"
     Then I get a list with my 3 my task lists
+
+  Scenario: As a user, I can create a reminder for a task list
+    Given I am logged in
+    When I navigate to "reminders"
+    When I create a new reminder for a task list
+    When a new reminder has been created for the given task list
