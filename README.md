@@ -6,7 +6,7 @@ REMbooth is a reminders service for tasks managed with [Redbooth](https://redboo
 
 ## Configuration
 
-REMbooth uses **rbenv** to manage the application environment variables. Before launching the project, set the required environment variables in the `.env` file:
+REMbooth uses `rbenv` to manage the application environment variables. Before launching the project, set the required environment variables in the `.env` file:
 
     REDBOOTH_APP_ID: value
     REDBOOTH_APP_SECRET: value
