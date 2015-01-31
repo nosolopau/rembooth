@@ -5,4 +5,3 @@ end
 When(/^I sign in using my Redbooth account$/) do
   click_link 'Sign in with Redbooth'
 end
-

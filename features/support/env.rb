@@ -6,6 +6,7 @@
 
 require 'cucumber/rails'
 require 'rspec/expectations'
+require 'fakeweb'
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
@@ -29,6 +30,22 @@ require 'rspec/expectations'
 #
 ActionController::Base.allow_rescue = false
 
+OmniAuth.config.test_mode = true
+OmniAuth.config.mock_auth[:redbooth] = OmniAuth::AuthHash.new({
+  provider: 'redbooth',
+  uid: '1019650',
+  info: {name: 'Test', email: 'test@example.com'},
+  credentials: {
+      token: 'e5575e8766d12efe38b52cda2cf3ba07bbc5cc9ca4a2a118b56b1926b12b40c9',
+      refresh_token: '6337c840eb04ae9fc6730a999329117ed132e8e71f25726e4d2d48c13ed8fb46',
+      expires_at: '1422716484',
+      expires: true
+  },
+  extra: {
+      raw_info: {}
+  }
+})
+
 # Remove/comment out the lines below if your app doesn't have a database.
 # For some databases (like MongoDB and CouchDB) you may need to use :truncation instead.
 begin
@@ -51,7 +68,6 @@ end
 #     DatabaseCleaner.strategy = :transaction
 #   end
 #
-
 # Possible values are :truncation and :transaction
 # The :transaction strategy is faster, but might give you threading problems.
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
