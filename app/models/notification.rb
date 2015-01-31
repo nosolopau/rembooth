@@ -13,7 +13,7 @@ class Notification
   validates :redbooth_task_description, uniqueness: true
 
   def self.deliver_for(reminder, redbooth_task)
-    # Raise!
+    # TODO Raise!
   end
 
   protected
