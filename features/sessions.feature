@@ -9,3 +9,4 @@ Scenario: As a user, I can sign in the application using my Redbooth account
   Then I must sign in to continue
   When I sign in using my Redbooth account
   Then I get the reminders section
+
