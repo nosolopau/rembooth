@@ -1,6 +1,6 @@
 # REMbooth
 
-REMbooth is a reminders service for tasks managed with [Redbooth](https://redbooth.com)
+REMbooth is a reminders service for tasks managed with [Redbooth](https://redbooth.com).
 
 [![Build Status](https://travis-ci.org/nosolopau/rembooth.svg?branch=master)](https://travis-ci.org/nosolopau/rembooth)
 
