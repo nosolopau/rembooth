@@ -38,8 +38,7 @@ OmniAuth.config.mock_auth[:redbooth] = OmniAuth::AuthHash.new({
   credentials: {
       token: 'e5575e8766d12efe38b52cda2cf3ba07bbc5cc9ca4a2a118b56b1926b12b40c9',
       refresh_token: '6337c840eb04ae9fc6730a999329117ed132e8e71f25726e4d2d48c13ed8fb46',
-      expires_at: '1422716484',
-      expires: true
+      expires: false
   },
   extra: {
       raw_info: {}

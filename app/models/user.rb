@@ -76,7 +76,7 @@ class User
   end
 
   def token_expired?
-    Time.now > Time.strptime(credentials[:expires_at].to_s, '%s')
+    credentials[:expires] && (Time.now > Time.strptime(credentials[:expires_at].to_s, '%s'))
   end
 
   def linked_twitter_account?
