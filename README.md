@@ -25,3 +25,9 @@ If you want to launch only the server, use:
 
     bundle exec rails s
 
+## Running the tests
+
+Just use:
+
+    bundle exec rake
+
