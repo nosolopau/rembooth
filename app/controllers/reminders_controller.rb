@@ -1,5 +1,5 @@
 class RemindersController < ApplicationController
-  before_action :set_reminder, only: [:show, :edit, :update, :destroy]
+  before_action :set_reminder, only: [:show, :edit]
   before_filter :authenticate_user!
   
   respond_to :html
@@ -11,46 +11,19 @@ class RemindersController < ApplicationController
     respond_with(@reminders)
   end
 
-  def show
-    respond_with(@reminder)
-  end
-
-  def new
-    @reminder = Reminder.new
-    respond_with(@reminder)
-  end
-
-  def edit
-  end
-
   def toggle
     @reminder = current_user.reminders.where(reminder_params).first
 
     if @reminder
       @reminder.destroy
+
+      head :ok
     else
       @reminder = current_user.reminders.new(reminder_params)
       @reminder.save
+
+      head :created
     end
-
-    respond_with(@reminder)
-  end
-
-  def create
-    @reminder = current_user.reminders.new(reminder_params)
-    @reminder.save
-
-    respond_with(@reminder)
-  end
-
-  def update
-    @reminder.update(reminder_params)
-    respond_with(@reminder)
-  end
-
-  def destroy
-    @reminder.destroy
-    respond_with(@reminder)
   end
 
   private
