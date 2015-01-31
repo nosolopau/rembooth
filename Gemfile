@@ -58,6 +58,7 @@ group :development, :test do
   gem 'cucumber-rails', require: false
   gem 'rspec-expectations'
   gem 'database_cleaner'
+  gem 'coveralls', require: false
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
 
