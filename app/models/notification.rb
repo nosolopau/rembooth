@@ -13,12 +13,14 @@ class Notification
   validates :redbooth_task_description, uniqueness: true
 
   def self.deliver_for(reminder, redbooth_task)
-    # TODO Raise!
+    Rails.logger.info "Sending notification for Redbooth task #{redbooth_task.id}..."
+
+    TwitterNotification.deliver_for(reminder, redbooth_task)
   end
 
   protected
 
-  def self.already_notified?(redbooth_task)
-    where(redbooth_task_id: redbooth_task.id).any?
+  def self.notification_pending?(redbooth_task)
+    where(redbooth_task_id: redbooth_task.id).empty?
   end
 end

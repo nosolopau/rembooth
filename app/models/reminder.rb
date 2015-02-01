@@ -14,19 +14,13 @@ class Reminder
   end
 
   def send_notifications
-    Rails.logger.info "Fetched #{redbooth_tasks.count} tasks from Redbooth. Processing..."
-
     redbooth_tasks.each do |redbooth_task|
       notify(redbooth_task) if self.class.due?(redbooth_task)
     end
   end
 
   def notify(redbooth_task)
-    Rails.logger.info "Sending notification for Redbooth task #{redbooth_task.id}..."
-
-    if user.linked_twitter_account?
-      TwitterNotification.deliver_for(self, redbooth_task)
-    end
+    Notification.deliver_for(self, redbooth_task)
   end
 
   def self.due?(redbooth_task)
