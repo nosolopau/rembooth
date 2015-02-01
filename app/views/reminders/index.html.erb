@@ -1,24 +1,28 @@
 <h1>Reminders</h1>
 
-<p>Mark a task list to get notifications:</p>
-<table class="table">
-  <thead>
-  <tr>
-    <th class="col-sm-1">Reminder</th>
-    <th class="col-sm-10">Task list</th>
-    <th class="col-sm-1">Tasks</th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @task_lists.each do |task_list| %>
+<% if @task_lists.any? %>
+  <p>Mark a task list to get notifications:</p>
+  <table class="table">
+    <thead>
     <tr>
-      <td><%= check_box_tag "task_list_#{task_list.id}", task_list.id, current_user.reminders.where(task_list_id: task_list.id).any? %></td>
-      <td><%= task_list.name %></td>
-      <td><%= task_list.tasks_count %></td>
+      <th class="col-sm-1">Reminder</th>
+      <th class="col-sm-10">Task list</th>
+      <th class="col-sm-1">Tasks</th>
     </tr>
-  <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+    <% @task_lists.each do |task_list| %>
+      <tr>
+        <td><%= check_box_tag "task_list_#{task_list.id}", task_list.id, current_user.reminders.where(task_list_id: task_list.id).any? %></td>
+        <td><%= task_list.name %></td>
+        <td><%= task_list.tasks_count %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>Ups! You don't have any task list in your Redbooth account. Please create a new one and come back then!</p>
+<% end %>
 
 <script type="text/javascript">
   $(function(){

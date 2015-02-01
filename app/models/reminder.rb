@@ -10,12 +10,21 @@ class Reminder
   validates :task_list_id, uniqueness: true
 
   def redbooth_tasks
-    @redbooth_tasks ||= RedboothService::Task.new(user).find_by(task_list_id: task_list_id).all
+    begin
+      @redbooth_tasks ||= RedboothService::Task.new(user).find_by(task_list_id: task_list_id).all
+    rescue => e
+      Rails.logger.error("Cannot find tasks for the associated task list, deleting reminder... (#{e.message})")
+
+      self.destroy
+      nil
+    end
   end
 
   def send_notifications
-    redbooth_tasks.each do |redbooth_task|
-      notify(redbooth_task) if self.class.due?(redbooth_task)
+    if redbooth_tasks
+      redbooth_tasks.each do |redbooth_task|
+        notify(redbooth_task) if self.class.due?(redbooth_task)
+      end
     end
   end
 
