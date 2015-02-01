@@ -37,3 +37,11 @@ Then(/^I have no reminders configured$/) do
   expect(has_no_checked_field?('task_list_2770927')).to eq true
   expect(has_no_checked_field?('task_list_2778138')).to eq true
 end
+
+Then(/^no notifications are sent$/) do
+  expect(FakeWeb.last_request.path).not_to eq '/1.1/statuses/update.json'
+end
+
+Then(/^a notification is sent$/) do
+  expect(FakeWeb.last_request.path).to eq '/1.1/statuses/update.json'
+end

@@ -17,7 +17,15 @@ Feature: Reminders
     When I remove the configured reminder
     Then I have no reminders configured
 
+  Scenario: The system will not send notifications for my reminders if I do not have linked my Twitter account
+    Given I am logged in
+    Given I have a reminder configured
+    When the cron rake task is executed
+    Then no notifications are sent
+
   Scenario: The system will send notifications for my reminders
     Given I am logged in
     Given I have a reminder configured
-    When The cron rake task is executed
+    Given I have a Twitter account linked
+    When the cron rake task is executed
+    Then a notification is sent

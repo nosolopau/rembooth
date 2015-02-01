@@ -5,4 +5,4 @@ Feature: Users account management
     When I navigate to "reminders"
     Then I am asked to link my account
     When I link my Twitter account
-    Then My Twitter account is linked
+    Then my Twitter account is linked
