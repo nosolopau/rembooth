@@ -9,6 +9,7 @@ gem 'capistrano-rails', '~> 1.1'
 gem 'capistrano3-delayed-job', '~> 1.0'
 gem 'therubyracer'
 gem 'unicorn'
+gem 'sentry-raven', git: 'https://github.com/getsentry/raven-ruby.git'
 
 gem 'devise'
 gem 'omniauth-redbooth'

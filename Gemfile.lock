@@ -16,6 +16,13 @@ GIT
       multipart-post (>= 1.1.0)
       oauth2 (>= 0.9.3)
 
+GIT
+  remote: https://github.com/getsentry/raven-ruby.git
+  revision: 9c708710b370fc2c0ecf68b4d8e100c4064f9df0
+  specs:
+    sentry-raven (0.12.3)
+      faraday (>= 0.7.6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -370,6 +377,7 @@ DEPENDENCIES
   rspec-expectations
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  sentry-raven!
   spring
   therubyracer
   turbolinks
