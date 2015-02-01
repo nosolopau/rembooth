@@ -10,3 +10,9 @@ Feature: Reminders
     When I navigate to "reminders"
     When I create a new reminder for a task list
     When a new reminder has been created for the given task list
+
+  Scenario: As a user, I can remove a reminder for a task list
+    Given I am logged in
+    Given I have a reminder configured
+    When I remove the configured reminder
+    Then I have no reminders configured
