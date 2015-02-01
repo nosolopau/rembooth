@@ -1,5 +1,4 @@
 class RemindersController < ApplicationController
-  before_action :set_reminder, only: [:show, :edit]
   before_filter :authenticate_user!
   
   respond_to :html
@@ -26,12 +25,9 @@ class RemindersController < ApplicationController
     end
   end
 
-  private
-    def set_reminder
-      @reminder = Reminder.find(params[:id])
-    end
+private
 
-    def reminder_params
-      params.require(:reminder).permit(:task_list_id)
-    end
+  def reminder_params
+    params.require(:reminder).permit(:task_list_id)
+  end
 end
