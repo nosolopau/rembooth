@@ -2,8 +2,8 @@
   "created_at": "Fri Dec 05 15:55:44 +0000 2014",
   "id": 540897316908331009,
   "id_str": "540897316908331009",
-  "text": "Powerful cartoon by @BillBramhall: http:\/\/t.co\/IOEbc5QoES",
-  "source": "\u003ca href=\"http:\/\/itunes.apple.com\/us\/app\/twitter\/id409789998?mt=12\" rel=\"nofollow\"\u003eTwitter for Mac\u003c\/a\u003e",
+  "text": "Task (due on 2015-01-01) - Description",
+  "source": "REMbooth",
   "truncated": false,
   "in_reply_to_status_id": null,
   "in_reply_to_status_id_str": null,
@@ -13,19 +13,19 @@
   "user": {
     "id": 7505382,
     "id_str": "7505382",
-    "name": "Erik Michaels-Ober",
-    "screen_name": "sferik",
-    "location": "Berlin",
+    "name": "REMbooth Robot",
+    "screen_name": "@rembooth_robot",
+    "location": "Barcelona",
     "profile_location": null,
-    "description": "Apostrophysicist",
-    "url": "https:\/\/t.co\/RKgIMeuXMc",
+    "description": "",
+    "url": "",
     "entities": {
       "url": {
         "urls": [
           {
-            "url": "https:\/\/t.co\/RKgIMeuXMc",
-            "expanded_url": "https:\/\/github.com\/sferik",
-            "display_url": "github.com\/sferik",
+            "url": "",
+            "expanded_url": "",
+            "display_url": "",
             "indices": [
               0,
               23
