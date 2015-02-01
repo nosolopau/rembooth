@@ -16,3 +16,8 @@ Feature: Reminders
     Given I have a reminder configured
     When I remove the configured reminder
     Then I have no reminders configured
+
+  Scenario: The system will send notifications for my reminders
+    Given I am logged in
+    Given I have a reminder configured
+    When The cron rake task is executed
