@@ -4,6 +4,7 @@ REMbooth is a reminders service for tasks managed with [Redbooth](https://redboo
 
 [![Build Status](https://travis-ci.org/nosolopau/rembooth.svg?branch=master)](https://travis-ci.org/nosolopau/rembooth)
 [![Code Climate](https://codeclimate.com/github/nosolopau/rembooth/badges/gpa.svg)](https://codeclimate.com/github/nosolopau/rembooth)
+[![Coverage Status](https://coveralls.io/repos/nosolopau/rembooth/badge.svg?branch=master)](https://coveralls.io/r/nosolopau/rembooth?branch=master)
 
 ## Configuration
 
