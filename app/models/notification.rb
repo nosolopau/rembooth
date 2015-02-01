@@ -7,6 +7,7 @@ class Notification
   field :redbooth_task_id, type: String
   field :redbooth_task_name, type: String
   field :redbooth_task_description, type: String
+  field :redbooth_task_due_on, type: String
 
   validates :redbooth_task_id, uniqueness: true
   validates :redbooth_task_name, uniqueness: true

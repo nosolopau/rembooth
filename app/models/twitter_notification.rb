@@ -10,7 +10,8 @@ class TwitterNotification < Notification
         reminder: reminder,
         redbooth_task_id: redbooth_task.id,
         redbooth_task_name: redbooth_task.name,
-        redbooth_task_description: redbooth_task.description
+        redbooth_task_description: redbooth_task.description,
+        redbooth_task_due_on: redbooth_task.due_on
     )
 
     twitter_notification.compose_status
@@ -31,6 +32,6 @@ class TwitterNotification < Notification
   end
 
   def compose_status
-    self.status = "@#{reminder.user.twitter_nickname} #{redbooth_task_name} #{"- #{redbooth_task_description}" if redbooth_task_description}".truncate(140)
+    self.status = "@#{reminder.user.twitter_nickname} #{redbooth_task_name} (due on #{redbooth_task_due_on}) #{"- #{redbooth_task_description}" if redbooth_task_description}".truncate(140)
   end
 end
