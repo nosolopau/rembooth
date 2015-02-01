@@ -51,16 +51,23 @@ OmniAuth.config.mock_auth[:redbooth] = OmniAuth::AuthHash.new({
 })
 
 OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
-  :provider=>"twitter",
-  :uid=>"11441832",
-  :info=>{
-      :nickname=>"test",
-      :name=>"User test", :location=>"Barcelona", :image=>"http://pbs.twimg.com/profile_images/524261903598505984/YnbOxKSC_normal.png",
-      :description=>"My irrelevant bio",
-      :urls=>{:Website=>"http://t.co/Ixhe7uCu5x", :Twitter=>"https://twitter.com/test"}},
-  :credentials=>{:token=>"11441832-oKD945lN8kc5umXEoXH4aBjyIotFRCqbtfKS0MrHq",
-                 :secret=>"AIuBr8SXPpev2VUNV4ukNlc02hYdi5Kt8s7MXq0GQDzSr"}}
-)
+  provider: 'twitter',
+  uid: '11441832',
+  info: {
+      nickname: 'test',
+      name: 'User test',
+      location: 'Barcelona',
+      image: 'http://pbs.twimg.com/profile_images/524261903598505984/YnbOxKSC_normal.png',
+      description: 'My irrelevant bio',
+      urls: { Website: 'http://t.co/Ixhe7uCu5x',
+              Twitter: 'https://twitter.com/test'
+      }
+  },
+  credentials: {
+      token: '11441832-oKD945lN8kc5umXEoXH4aBjyIotFRCqbtfKS0MrHq',
+      secret: 'AIuBr8SXPpev2VUNV4ukNlc02hYdi5Kt8s7MXq0GQDzSr'
+  }
+})
 
 
 # Remove/comment out the lines below if your app doesn't have a database.
