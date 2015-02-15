@@ -4,7 +4,7 @@ class RemindersController < ApplicationController
   respond_to :html
 
   def index
-    @reminders = Reminder.all
+    @reminders = current_user.reminders
     @task_lists = RedboothService::TaskList.new(current_user).all
 
     respond_with(@reminders)
