@@ -34,7 +34,7 @@
     "deleted": false,
     "row_order": 6291456,
     "status": "open",
-    "due_on": "<%= '2015-02-01' %>"
+    "due_on": "<%= Date.current.strftime %>"
   },
   {
     "type": "Task",
