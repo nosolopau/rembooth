@@ -15,3 +15,5 @@ coverage
 !/log/.keep
 /tmp
 .vagrant
+newrelic.yml
+.DS_Store
