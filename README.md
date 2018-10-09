@@ -6,8 +6,6 @@ REMbooth is a reminders service for tasks managed with [Redbooth](https://redboo
 [![Code Climate](https://codeclimate.com/github/nosolopau/rembooth/badges/gpa.svg)](https://codeclimate.com/github/nosolopau/rembooth)
 [![Coverage Status](https://coveralls.io/repos/nosolopau/rembooth/badge.svg?branch=master)](https://coveralls.io/r/nosolopau/rembooth?branch=master)
 
-Try it at [rembooth.nosolopau.com](http://rembooth.nosolopau.com) :)
-
 How to:
 
 1. Sign in REMbooth using your Redbooth account
